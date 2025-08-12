@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ideal Eletrônica Sat - Especialistas em Automação e Segurança</title>
+    <meta name="description" content="Ideal Eletrônica Sat - Especialistas em automação de portões, interfones, câmeras de segurança e sistemas de alarme. Atendimento em toda região.">
+    <meta name="keywords" content="automação, portão automático, interfone, câmera de segurança, alarme, eletrônica, sat">
+    <meta name="author" content="Ideal Eletrônica Sat">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://idealeletronicasat.com.br/">
+    <meta property="og:title" content="Ideal Eletrônica Sat - Especialistas em Automação">
+    <meta property="og:description" content="Especialistas em automação de portões, interfones, câmeras de segurança e sistemas de alarme.">
+    <meta property="og:image" content="https://idealeletronicasat.com.br/imagens/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://idealeletronicasat.com.br/">
+    <meta property="twitter:title" content="Ideal Eletrônica Sat - Especialistas em Automação">
+    <meta property="twitter:description" content="Especialistas em automação de portões, interfones, câmeras de segurança e sistemas de alarme.">
+    <meta property="twitter:image" content="https://idealeletronicasat.com.br/imagens/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="imagens/logo.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                            radial-gradient(circle at 75% 75%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
+        }
+        
+        .navbar-blur {
+            backdrop-filter: blur(10px);
+            background-color: rgba(220, 38, 38, 0.95);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Swiper Styles */
+        .hero-swiper {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-swiper .swiper-slide {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .hero-swiper .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Custom Navigation Buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fbbf24;
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: rgba(255, 255, 255, 1);
+            color: #dc2626;
+        }
+        
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        /* Custom Pagination */
+        .swiper-pagination-bullet {
+            background: #fbbf24;
+            opacity: 0.5;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #fbbf24;
+        }
+
+        /* Gallery Styles */
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Mobile - Always show info */
+        @media (max-width: 768px) {
+            .gallery-item .absolute.inset-0 {
+                opacity: 0.7 !important;
+            }
+            
+            .gallery-item .absolute.top-4.right-4 {
+                opacity: 1 !important;
+            }
+        }
+
+        
+
+        /* Gallery Grid Responsive */
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1281px) {
+            .grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+        }
+
+        /* Swiper 3D Styles - Estilo J3 Digital Mídia */
+        .swiper-3d .swiper-slide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .swiper-3d .swiper-slide-active,
+        .swiper-3d .swiper-slide-next,
+        .swiper-3d .swiper-slide-prev {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Mobile Responsive for Swiper 3D */
+        @media (max-width: 640px) {
+            .swiper-3d {
+                width: 80vw !important;
+                max-width: 80vw !important;
+                height: 65vw !important;
+                max-height: 65vw !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block !important;
+            }
+            .swiper-3d .swiper-slide {
+                background: transparent !important;
+                height: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                padding: 0 !important;
+            }
+            .swiper-3d img {
+                height: 100% !important;
+                width: 100% !important;
+                object-fit: contain !important;
+                background: transparent !important;
+                display: block !important;
+            }
+        }
+
+        /* Mobile Responsive for Hero Swiper */
+        @media (max-width: 640px) {
+            .hero-swiper {
+                width: 100% !important;
+                height: 100vh !important;
+            }
+            .hero-swiper .swiper-slide {
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .hero-swiper .swiper-slide img {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 navbar-blur border-b border-red-700">
+        <div class="container mx-auto px-4">
+                         <div class="flex items-center justify-between h-12">
+                                 <!-- Logo -->
+                 <div class="flex items-center">
+                     <img src="imagens/logo.png" alt="Ideal Eletrônica Sat" class="h-10 w-auto">
+                     <div class="ml-3">
+                         <h1 class="text-lg font-bold text-white">Ideal Eletrônica Sat</h1>
+                     </div>
+                 </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-white hover:text-yellow-300 font-medium transition-colors">Início</a>
+                    <a href="#galeria" class="text-white hover:text-yellow-300 font-medium transition-colors">Galeria</a>
+                    <a href="#servicos" class="text-white hover:text-yellow-300 font-medium transition-colors">Serviços</a>
+                    <a href="#produtos" class="text-white hover:text-yellow-300 font-medium transition-colors">Produtos</a>
+                    <a href="#sobre" class="text-white hover:text-yellow-300 font-medium transition-colors">Sobre</a>
+                    <a href="#contato" class="text-white hover:text-yellow-300 font-medium transition-colors">Contato</a>
+                                         <a href="https://wa.me/5513982141190" class="text-yellow-400 hover:text-yellow-300 font-medium transition-all duration-300">
+                         <i class="fab fa-whatsapp text-4xl"></i>
+                     </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:text-yellow-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+                 <div id="mobile-menu" class="mobile-menu md:hidden fixed top-12 left-0 w-full h-screen bg-red-600 border-t border-red-700">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="#inicio" class="text-white hover:text-yellow-300 font-medium py-2 border-b border-red-500">Início</a>
+                    <a href="#galeria" class="text-white hover:text-yellow-300 font-medium py-2 border-b border-red-500">Galeria</a>
+                    <a href="#servicos" class="text-white hover:text-yellow-300 font-medium py-2 border-b border-red-500">Serviços</a>
+                    <a href="#produtos" class="text-white hover:text-yellow-300 font-medium py-2 border-b border-red-500">Produtos</a>
+                    <a href="#sobre" class="text-white hover:text-yellow-300 font-medium py-2 border-b border-red-500">Sobre</a>
+                    <a href="#contato" class="text-white hover:text-yellow-300 font-medium py-2 border-b border-red-500">Contato</a>
+                                         <a href="https://wa.me/5513982141190" class="bg-yellow-400 hover:bg-yellow-500 text-red-800 px-6 py-3 rounded-full font-medium text-center mt-4 transition-all duration-300">
+                         <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                     </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+         <section id="inicio" class="pt-12 min-h-screen relative">
+        <!-- Hero Carousel Background -->
+        <div class="absolute inset-0 z-0">
+            <div class="swiper hero-swiper h-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="relative h-full">
+                            <img src="imagens/capa.jpg" alt="Capa 1" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative h-full">
+                            <img src="imagens/capa2.jpg" alt="Capa 2" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative h-full">
+                            <img src="imagens/capa3.jpg" alt="Capa 3" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="relative h-full">
+                            <img src="imagens/capa4.jpg" alt="Capa 4" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="absolute bottom-0 left-0 right-0 z-10 pb-8">
+            <div class="container mx-auto px-4">
+                <div class="text-center text-white">
+                    <div class="mb-6">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            Sua <span class="text-yellow-400">Segurança</span> e <span class="text-yellow-400">Conforto</span> em Primeiro Lugar
+                        </h1>
+                        <p class="text-xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
+                            Especialistas em automação de portões, interfones, câmeras de segurança, sistemas de alarme, cercas elétricas, controle de acesso. 
+                        </p>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-3">
+                                <i class="fas fa-shield-alt text-2xl text-yellow-400"></i>
+                            </div>
+                            <p class="text-white text-sm font-medium">Segurança</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-3">
+                                <i class="fas fa-cog text-2xl text-yellow-400"></i>
+                            </div>
+                            <p class="text-white text-sm font-medium">Automação</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-3">
+                                <i class="fas fa-headset text-2xl text-yellow-400"></i>
+                            </div>
+                            <p class="text-white text-sm font-medium">Suporte 24h</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-4 mb-3">
+                                <i class="fas fa-tools text-2xl text-yellow-400"></i>
+                            </div>
+                            <p class="text-white text-sm font-medium">Manutenção</p>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                        <a href="https://wa.me/5513982141190" class="bg-yellow-400 hover:bg-yellow-500 text-red-800 px-8 py-2 rounded-full font-semibold text-lg flex items-center justify-center transition-all duration-300">
+                            <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!-- Galeria de Imagens -->
+    <section id="galeria" class="py-16 bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="container mx-auto px-4">
+            <!-- Header da Galeria -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    Nossos <span class="text-red-400">Trabalhos</span> e <span class="text-red-400">Produtos</span>
+                </h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                    Conheça alguns dos nossos projetos e produtos de automação e segurança que realizamos com excelência e qualidade.
+                </p>
+            </div>
+
+            <!-- Grid da Galeria -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+                                 <!-- Imagem 1 -->
+                 <div class="gallery-item group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <img src="imagens/portao.jpg" alt="Sistema de Automação - Ideal Eletrônica" 
+                             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-lg font-semibold">Sistema de Automação</h3>
+                                <p class="text-sm opacity-90">Portões automáticos e controles de acesso</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                 <!-- Imagem 2 -->
+                 <div class="gallery-item group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <img src="imagens/interfone.jpg" alt="Interfone e Comunicação - Ideal Eletrônica" 
+                             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-lg font-semibold">Interfone e Comunicação</h3>
+                                <p class="text-sm opacity-90">Sistemas de comunicação residencial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                 <!-- Imagem 3 -->
+                 <div class="gallery-item group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <img src="imagens/cameras.jpg" alt="Câmeras de Segurança - Ideal Eletrônica" 
+                             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-lg font-semibold">Câmeras de Segurança</h3>
+                                <p class="text-sm opacity-90">Monitoramento e vigilância 24h</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                 <!-- Imagem 4 -->
+                 <div class="gallery-item group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <img src="imagens/alarme.jpg" alt="Sistemas de Alarme - Ideal Eletrônica" 
+                             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-lg font-semibold">Sistemas de Alarme</h3>
+                                <p class="text-sm opacity-90">Proteção completa para sua propriedade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                 <!-- Imagem 5 -->
+                 <div class="gallery-item group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <img src="imagens/motor.jpg" alt="Motores para Portões - Ideal Eletrônica" 
+                             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-lg font-semibold">Motores para Portões</h3>
+                                <p class="text-sm opacity-90">Automação de portões deslizantes e basculantes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                 <!-- Imagem 6 -->
+                 <div class="gallery-item group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                        <img src="imagens/interfone2.jpg" alt="Interfone Digital - Ideal Eletrônica" 
+                             class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-lg font-semibold">Interfone Digital</h3>
+                                <p class="text-sm opacity-90">Tecnologia avançada em comunicação</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                                                   <!-- Imagem 7 -->
+                  <div class="gallery-item group cursor-pointer">
+                     <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                         <img src="imagens/instalação.jpg" alt="Instalação Profissional - Ideal Eletrônica" 
+                              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                             <div class="absolute bottom-4 left-4 text-white">
+                                 <h3 class="text-lg font-semibold">Instalação Profissional</h3>
+                                 <p class="text-sm opacity-90">Técnicos especializados e certificados</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                                   <!-- Imagem 8 -->
+                  <div class="gallery-item group cursor-pointer">
+                     <div class="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
+                         <img src="imagens/cerca.jpg" alt="Cerca Elétrica - Ideal Eletrônica" 
+                              class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                             <div class="absolute bottom-4 left-4 text-white">
+                                 <h3 class="text-lg font-semibold">Cerca Elétrica</h3>
+                                 <p class="text-sm opacity-90">Sistema de proteção perimetral</p>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+
+            <!-- Botão CTA -->
+            <div class="text-center">
+                <a href="https://wa.me/5513982141190" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                    Solicitar Orçamento
+                </a>
+            </div>
+        </div>
+
+        
+    </section>
+
+    <!-- Carrossel de Imagens 3D - Estilo J3 Digital Mídia -->
+    <section class="w-full relative py-12 md:py-20 px-2 sm:px-4 flex flex-col items-center overflow-hidden bg-gradient-to-br from-blue-950 to-slate-900">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4">
+                NOSSOS <span class="text-yellow-400">PROJETOS</span> EM DESTAQUE
+            </h2>
+            <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+                Conheça alguns dos nossos trabalhos mais recentes em automação e segurança residencial
+            </p>
+            <div class="relative z-10 w-full max-w-4xl mx-auto">
+                <div class="swiper-container swiper-3d max-w-2xl w-full h-[10rem] sm:h-[16rem] md:h-[20rem] lg:h-[24rem]">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-white/80 shadow-2xl overflow-hidden border-2 border-white/60">
+                            <img src="imagens/capa2.jpg" alt="Sistema de Automação" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide bg-white/80 shadow-2xl overflow-hidden border-2 border-white/60">
+                            <img src="imagens/alarme.jpg" alt="Interfone Digital" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide bg-white/80 shadow-2xl overflow-hidden border-2 border-white/60">
+                            <img src="imagens/cameras.jpg" alt="Câmeras de Segurança" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide bg-white/80 shadow-2xl overflow-hidden border-2 border-white/60">
+                            <img src="imagens/capa4.jpg" alt="Sistema de Alarme" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide bg-white/80 shadow-2xl overflow-hidden border-2 border-white/60">
+                            <img src="imagens/motor.jpg" alt="Motor para Portão" class="w-full h-full object-cover">
+                        </div>
+                        <div class="swiper-slide bg-white/80 shadow-2xl overflow-hidden border-2 border-white/60">
+                            <img src="imagens/interfone.jpg" alt="Interfone Residencial" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            
+            <!-- Botão CTA -->
+            <div class="text-center mt-12">
+                <a href="https://wa.me/5513982141190" class="inline-flex items-center bg-yellow-400 hover:bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                    Solicitar Orçamento
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+         <footer class="bg-black py-4">
+         <div class="container mx-auto px-2 md:px-4">
+                         <div class="flex flex-col md:flex-row items-center justify-center gap-1 text-center">
+                 <span class="text-white text-sm md:text-base">© 2024 Ideal Eletrônica Sat. Todos os direitos reservados.</span>
+                 <div class="flex flex-row items-center gap-1">
+                     <span class="text-white text-sm md:text-base">Produzido por:</span>
+                     <img src="imagens/footerj3.png" alt="J3 Digital Mídia" class="h-6 md:h-8 w-auto">
+                 </div>
+             </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Initialize Swiper
+        const heroSwiper = new Swiper('.hero-swiper', {
+            effect: 'slide',
+            grabCursor: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // Initialize Swiper 3D - Estilo J3 Digital Mídia
+        new Swiper('.swiper-3d', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 1.5,
+            coverflowEffect: {
+                rotate: -50,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            loop: true,
+        });
+
+        
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
