@@ -213,6 +213,26 @@
             }
         }
 
+        /* Text Gradient Effect */
+        .text-gradient {
+            background: linear-gradient(135deg, #8B4513 0%, #D2691E 25%, #F4A460 50%, #D2691E 75%, #8B4513 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
         
     </style>
 </head>
@@ -276,29 +296,29 @@
                                   <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
                                       <i class="fas fa-shield-alt text-lg md:text-2xl text-black"></i>
                                   </div>
-                                  <p class="text-white text-xs md:text-sm font-medium">Segurança</p>
+                                  <p class="text-gradient text-base md:text-xl font-medium">Segurança</p>
                               </div>
                               <div class="text-center">
                                   <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
                                       <i class="fas fa-cog text-lg md:text-2xl text-black"></i>
                                   </div>
-                                  <p class="text-white text-xs md:text-sm font-medium">Automação</p>
+                                  <p class="text-gradient text-base md:text-xl font-medium">Automação</p>
                               </div>
                               <div class="text-center">
                                   <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
                                       <i class="fas fa-tools text-lg md:text-2xl text-black"></i>
                                   </div>
-                                  <p class="text-white text-xs md:text-sm font-medium">Contratos de Manutenção</p>
+                                  <p class="text-gradient text-base md:text-xl font-medium">Contratos de Manutenção</p>
                               </div>
                           </div>
 
-                                           <!-- CTA Buttons -->
-                                               <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-                            <a href="https://wa.me/5513982141190" class="bg-black hover:bg-gray-800 text-white px-8 py-2 rounded-full font-semibold text-lg flex items-center justify-center transition-all duration-300">
-                                <i class="fab fa-whatsapp mr-3 text-xl"></i>
-                                Solicitar Orçamento
-                            </a>
-                        </div>
+                                                                                       <!-- CTA Buttons -->
+                                                <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+                             <a href="https://wa.me/5513982141190" class="bg-black hover:bg-gray-800 px-8 py-2 rounded-full font-semibold text-lg flex items-center justify-center transition-all duration-300">
+                                 <i class="fab fa-whatsapp mr-3 text-xl text-gradient"></i>
+                                 <span class="text-gradient">Solicitar Orçamento</span>
+                             </a>
+                         </div>
                        
                                              <!-- Contact Buttons - Estilo J3 Digital Mídia -->
                                                  <div class="flex justify-center gap-8 mt-4">
@@ -606,6 +626,16 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
+       
+        
+
+        
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -627,6 +657,7 @@
     </script>
 </body>
 </html>
+
 
 
 
