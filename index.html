@@ -286,31 +286,31 @@
               <div class="container mx-auto px-4">
                   <div class="text-center text-white">
                                              <!-- Logo -->
-                       <div class="mb-8">
-                           <img src="imagens/logo.png" alt="Ideal Eletrônica Sat" class="mx-auto h-64 w-auto md:h-96 drop-shadow-2xl object-contain">
-                       </div>
+                                               <div class="mb-8">
+                            <img src="imagens/logo.png" alt="Ideal Eletrônica Sat" class="mx-auto h-64 w-auto md:h-96 drop-shadow-2xl object-contain" style="filter: drop-shadow(0 0 3px rgba(0, 0, 0, 1));">
+                        </div>
                      
                                                                                                                                                                                                                                                                                                                                                                <!-- Features -->
-                                                   <div class="grid grid-cols-3 gap-2 md:gap-4 mt-6 max-w-4xl mx-auto">
-                              <div class="text-center">
-                                  <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
-                                      <i class="fas fa-shield-alt text-lg md:text-2xl text-black"></i>
-                                  </div>
-                                  <p class="text-gradient text-base md:text-xl font-medium">Segurança</p>
-                              </div>
-                              <div class="text-center">
-                                  <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
-                                      <i class="fas fa-cog text-lg md:text-2xl text-black"></i>
-                                  </div>
-                                  <p class="text-gradient text-base md:text-xl font-medium">Automação</p>
-                              </div>
-                              <div class="text-center">
-                                  <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
-                                      <i class="fas fa-tools text-lg md:text-2xl text-black"></i>
-                                  </div>
-                                  <p class="text-gradient text-base md:text-xl font-medium">Contratos de Manutenção</p>
-                              </div>
-                          </div>
+                                                                                                       <div class="grid grid-cols-3 gap-2 md:gap-4 mt-6 max-w-4xl mx-auto">
+                                                               <div class="text-center">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
+                                        <i class="fas fa-shield-alt text-lg md:text-2xl text-black"></i>
+                                    </div>
+                                    <p class="text-gradient text-lg md:text-2xl font-medium">Segurança</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
+                                        <i class="fas fa-cog text-lg md:text-2xl text-black"></i>
+                                    </div>
+                                    <p class="text-gradient text-lg md:text-2xl font-medium">Automação</p>
+                                </div>
+                                <div class="text-center">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
+                                        <i class="fas fa-tools text-lg md:text-2xl text-black"></i>
+                                    </div>
+                                    <p class="text-gradient text-lg md:text-2xl font-medium">Contratos de Manutenção</p>
+                                </div>
+                           </div>
 
                                                                                        <!-- CTA Buttons -->
                                                 <div class="flex flex-col sm:flex-row gap-4 justify-center mt-4">
@@ -626,16 +626,6 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-       
-        
-
-        
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -657,6 +647,7 @@
     </script>
 </body>
 </html>
+
 
 
 
