@@ -34,6 +34,7 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap" rel="stylesheet">
     
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -55,6 +56,12 @@
         .navbar-blur {
             backdrop-filter: blur(10px);
             background-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .navbar-link {
+            font-family: 'Anton', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
         
         
@@ -186,6 +193,27 @@
             pointer-events: auto;
         }
 
+        /* Nest Hub 1024x600 - Logo e Cards ajuste */
+        @media (min-width: 1024px) and (max-width: 1024px) and (min-height: 600px) and (max-height: 600px) {
+            .logo-hero {
+                height: 200px !important;
+                width: auto !important;
+            }
+            
+            .hero-card {
+                padding: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .hero-card i {
+                font-size: 1.25rem !important;
+            }
+            
+            .hero-card-text {
+                font-size: 1rem !important;
+            }
+        }
+
         /* Mobile Responsive for Swiper 3D */
         @media (max-width: 640px) {
             .swiper-3d {
@@ -233,6 +261,22 @@
             }
         }
 
+        /* Hero Cards Shadow */
+        .hero-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .hero-card:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8), 0 3px 6px rgba(0, 0, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Cards Text - Line Height Ajustado */
+        .hero-card-text {
+            line-height: 1.1;
+        }
+
         
     </style>
 </head>
@@ -243,18 +287,18 @@
                          <div class="flex items-center justify-between h-12">
                  <!-- Mobile Menu - Links centralizados -->
                  <div class="flex md:hidden items-center space-x-4 absolute left-1/2 transform -translate-x-1/2">
-                     <a href="#inicio" class="text-white hover:text-yellow-300 font-medium transition-colors text-sm">Início</a>
-                     <a href="#galeria" class="text-white hover:text-yellow-300 font-medium transition-colors text-sm">Galeria</a>
-                     <a href="#servicos" class="text-white hover:text-yellow-300 font-medium transition-colors text-sm">Serviços</a>
-                     <a href="#contato" class="text-white hover:text-yellow-300 font-medium transition-colors text-sm">Contato</a>
+                     <a href="#inicio" class="text-white hover:text-yellow-300 transition-colors text-sm navbar-link">Início</a>
+                     <a href="#galeria" class="text-white hover:text-yellow-300 transition-colors text-sm navbar-link">Galeria</a>
+                     <a href="#servicos" class="text-white hover:text-yellow-300 transition-colors text-sm navbar-link">Serviços</a>
+                     <a href="#contato" class="text-white hover:text-yellow-300 transition-colors text-sm navbar-link">Contato</a>
                  </div>
 
                  <!-- Desktop Menu - Centralizado -->
                  <div class="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
-                     <a href="#inicio" class="text-white hover:text-yellow-300 font-medium transition-colors">Início</a>
-                     <a href="#galeria" class="text-white hover:text-yellow-300 font-medium transition-colors">Galeria</a>
-                     <a href="#servicos" class="text-white hover:text-yellow-300 font-medium transition-colors">Serviços</a>
-                     <a href="#contato" class="text-white hover:text-yellow-300 font-medium transition-colors">Contato</a>
+                     <a href="#inicio" class="text-white hover:text-yellow-300 transition-colors navbar-link">Início</a>
+                     <a href="#galeria" class="text-white hover:text-yellow-300 transition-colors navbar-link">Galeria</a>
+                     <a href="#servicos" class="text-white hover:text-yellow-300 transition-colors navbar-link">Serviços</a>
+                     <a href="#contato" class="text-white hover:text-yellow-300 transition-colors navbar-link">Contato</a>
                  </div>
 
                                                    <!-- WhatsApp Icon -->
@@ -287,32 +331,32 @@
                   <div class="text-center text-white">
                                              <!-- Logo -->
                                                <div class="mb-8">
-                            <img src="imagens/logo.png" alt="Ideal Eletrônica Sat" class="mx-auto h-64 w-auto md:h-96 drop-shadow-2xl object-contain" style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 1)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8));">
+                            <img src="imagens/logo.png" alt="Ideal Eletrônica Sat" class="logo-hero mx-auto h-64 w-auto md:h-80 drop-shadow-2xl object-contain" style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 1)) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8));">
                         </div>
                      
                                                                                                                                                                                                                                                                                                                                                                <!-- Features -->
                                                                                                        <div class="grid grid-cols-3 gap-2 md:gap-4 mt-6 max-w-4xl mx-auto">
                                                                <div class="text-center">
-                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3 hero-card">
                                         <i class="fas fa-shield-alt text-lg md:text-2xl text-black"></i>
                                     </div>
-                                    <p class="text-gradient text-lg md:text-2xl font-medium">Segurança</p>
+                                    <p class="text-gradient text-lg md:text-2xl font-medium hero-card-text">Segurança</p>
                                 </div>
                                 <div class="text-center">
-                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3 hero-card">
                                         <i class="fas fa-tools text-lg md:text-2xl text-black"></i>
                                     </div>
-                                    <p class="text-gradient text-lg md:text-2xl font-medium">
+                                    <p class="text-gradient text-lg md:text-2xl font-medium hero-card-text">
                                         Contratos<br>
                                         de<br>
                                         Manutenção
                                     </p>
                                 </div>
                                 <div class="text-center">
-                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3">
+                                    <div class="bg-white bg-opacity-20 rounded-lg p-1 md:p-4 mb-2 md:mb-3 hero-card">
                                         <i class="fas fa-cog text-lg md:text-2xl text-black"></i>
                                     </div>
-                                    <p class="text-gradient text-lg md:text-2xl font-medium">Automação</p>
+                                    <p class="text-gradient text-lg md:text-2xl font-medium hero-card-text">Automação</p>
                                 </div>
                            </div>
 
@@ -648,6 +692,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
